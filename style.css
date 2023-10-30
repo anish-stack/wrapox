@@ -1,0 +1,678 @@
+@font-face {
+    font-family: Futura;
+    src: url(./Futura-Bold.ttf);
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url(./Gilroy-Medium.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+}
+
+*::selection {
+    color: #fff;
+    background-color: #000;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+body {
+    scroll-behavior: smooth;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+}
+
+#page1 {
+    min-height: 100vh;
+    /* background-color: aqua; */
+    position: relative;
+    width: 100%;
+    padding: 0 1vw;
+
+}
+
+#page1 h1 {
+    padding-top: 10vh;
+    font-size: 4.3125rem;
+    /* 13.8vw converted to rem */
+    text-transform: uppercase;
+    font-family: futura;
+    line-height: 4.375rem;
+    letter-spacing: -8px;
+}
+
+#navbars {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    position: relative;
+    transition: rotate3d 0.4s;
+    z-index: 99990;
+    /* Ensure the navbar is above other content */
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#logo {
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: futura;
+}
+
+#navitems {
+    display: flex;
+    transition: rotate3d 0.4s;
+
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 2rem;
+    list-style-type: none;
+}
+
+
+.nav-items {
+    font-size: 1.2rem;
+    color: #000;
+    transition: color 0.4s;
+    font-weight: 600;
+    font-style: futura;
+    list-style-type: none;
+
+    text-decoration: none;
+}
+
+.nav-items:hover {
+    border-bottom: 2px solid;
+    color: #ff6f00;
+}
+
+.menu {
+    position: relative;
+    z-index: 15;
+    display: none;
+}
+
+.show {
+    transform: rotate3d(1, 1, 1, 0deg) !important;
+}
+
+.active {
+    color: #ff6f00;
+}
+
+/* ====================Slider======================== */
+#slider {
+    width: 100%;
+    min-height: 600px;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    border-radius: 30px;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+[data-slide="2"] {
+    transform: translateX(-100%);
+}
+
+[data-slide="3"] {
+    transform: translateX(-200%);
+}
+
+/* ========================page2======================== */
+#page2 {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.2vw;
+
+}
+
+#page2 h1 {
+    margin: 20px;
+
+    position: relative;
+    padding: 0;
+    text-align: center;
+    font-size: 6rem;
+}
+
+.conatiner {
+    padding: 1.2rem 2.2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cursor {
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    top: 0;
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    scale: 0;
+    text-align: center;
+    padding: 1rem;
+    height: 100px;
+    background-color: #000;
+    color: #c3cfe2;
+    border-radius: 50%;
+}
+
+.content {
+    width: 50%;
+    text-align: left;
+}
+
+.about__us {
+    width: 50%;
+    text-align: left;
+}
+
+.our__misson {
+    text-transform: capitalize;
+    font-family: 'Gilroy';
+    margin-top: 35px;
+    border-bottom: 2px solid #ff6f00;
+}
+
+.our__misson h3 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-family: 'Gilroy';
+}
+
+.our__misson p {
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    font-family: 'futura';
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+/* .our__misson h3{
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-family: 'Gilroy';
+}
+.our__misson p{
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    font-family: 'futura';
+    font-weight: 300;
+    margin-bottom: 12px;
+} */
+.button {
+    padding: 1rem 3rem;
+    background-color: #000;
+    position: relative;
+    margin-top: 5px;
+    border-radius: 30px;
+
+}
+
+.button a {
+    color: #c3cfe2;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+
+}
+
+/* ========================page3======================== */
+#page3 {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.2vw;
+}
+
+#page3 h1 {
+    letter-spacing: 10px;
+    text-align: center;
+}
+
+
+.containers {
+    display: flex;
+    overflow-y: hidden;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.slide-products {
+    display: flex;
+    position: relative;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+}
+
+.product {
+    flex: 0 0 calc(33.33% - 1rem);
+    margin-right: 1rem;
+    border-radius: 25px;
+    margin-bottom: 12px;
+    scroll-snap-align: start;
+    cursor: grab;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    background-color: #ff6f00;
+}
+
+/* Add styling for product images, text, and overlays as needed */
+.product img {
+    border-radius: 25px;
+    max-width: 100%;
+
+    height: 400px;
+    padding: 2rem;
+}
+
+.body-product {
+    padding: 1rem;
+}
+
+.body-product p {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Define the scrollbar width and track color */
+::-webkit-scrollbar {
+    margin-top: 12px;
+    cursor: grab;
+
+    width: 10px;
+}
+
+/* Define the scrollbar thumb color */
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    /* Change to your preferred color */
+    border-radius: 5px;
+}
+
+/* Define the scrollbar track background color */
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    /* Change to your preferred color */
+    border-radius: 5px;
+}
+
+
+.product:hover {
+    transform: translateY(-20px);
+}
+
+
+.body-product {
+    padding: 1rem;
+}
+
+
+#page4 {
+    min-height: 100vh;
+}
+
+#page4 h1 {
+    text-align: center;
+    padding-bottom: 50px;
+    letter-spacing: 5px;
+    font-size: 6rem;
+}
+
+.contact-form {
+    border-radius: 5px;
+    padding: 20px;
+    margin: 0 auto;
+
+    max-width: 1000px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.form-group select {
+    height: 40px;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.form-group button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #191d32;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-heading {
+    font-weight: bold;
+}
+ul{
+    list-style-type: none;
+}
+
+
+.footer-address {
+    margin-bottom: 10px;
+}
+
+.footer-social-icons {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.footer-social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-newsletter {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+a{
+    text-decoration: none;
+}
+.newsletter-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+.copyright{
+    text-align: center;
+}
+
+
+/* Container for DIWALI PRODUCTS */
+#page6{
+    min-height:100vh ;
+    position: relative;
+}
+#page6 h2{
+    font-size: 3rem;
+    text-align: center;
+}.diwaliproductsconatiner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual DIWALI PRODUCT */
+.diwali__product {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+}
+
+.diwali__product img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.diwali__product img:hover {
+    padding: 25px;
+    transform: rotate(5deg);
+}
+
+.diwali__product h3 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Download Catalogue Link */
+.download-catlelogue {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.download-catlelogue a {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.download-catlelogue a:hover {
+    background-color: #0056b3;
+}
+
+/* Media Query for Small Screens (e.g., Tablets and Mobile) */
+@media screen and (max-width: 768px) {
+    .diwaliproductsconatiner {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .diwali__product {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .copyright a{
+        font-size: 12px;
+    }
+    .nav {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 9;
+        transition: all 0.4s;
+        left: 42%;
+        transform: rotate3d(1, 1, 1, 120deg);
+        backdrop-filter: brightness(0.5);
+    }
+
+    .menu {
+        display: block;
+    }
+
+    #navitems {
+        flex-direction: column;
+        line-height: 3;
+        padding-left: 76px;
+        align-items: flex-start;
+
+    }
+
+    #navitems .nav-items {
+        color: #fff;
+    }
+
+    #slider {
+        min-height: 400px;
+
+    }
+
+    .conatiner {
+
+        flex-direction: column;
+    }
+
+    .about__us {
+        width: 100%;
+        display: contents;
+    }
+
+    .content {
+        width: 100%;
+
+    }
+
+    .product {
+        flex: 0 0 calc(100% - 1rem);
+
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    #logo {
+        font-size: 1rem;
+       
+    }
+
+    #page2 h1 {
+        font-size: 3rem;
+        letter-spacing: 8px;
+    }
+
+    #page1 h1 {
+        font-size: 2.5rem;
+        letter-spacing: 8px;
+    }
+    #page4 h1 {
+        text-align: center;
+        padding-bottom: 0px;
+        letter-spacing: 5px;
+        font-size: 3rem;
+    }
+}
+
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    #navitems {
+
+        gap: 1rem 1rem;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .product {
+        flex: 0 0 calc(49.33% - 1rem);
+
+    }
+}
